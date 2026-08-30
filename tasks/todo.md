@@ -1,6 +1,6 @@
 # StateSlate v0.1.0 task list
 
-- [ ] Task 1: Strict JSON contract
+- [x] Task 1: Strict JSON contract
   - Acceptance: valid project parses; unknown keys, duplicates, and bounds fail.
   - Verify: focused parser tests fail first, then pass.
 - [ ] Task 2: Story-order state propagation

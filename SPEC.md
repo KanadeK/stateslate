@@ -79,7 +79,7 @@ replace an existing directory.
 ## Commands
 
 ```console
-uv sync --extra dev --locked
+uv sync --locked --all-groups
 uv run --locked ruff format --check .
 uv run --locked ruff check .
 uv run --locked mypy src tests

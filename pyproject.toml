@@ -1,0 +1,78 @@
+[build-system]
+requires = ["uv_build>=0.11.20,<0.13"]
+build-backend = "uv_build"
+
+[project]
+name = "stateslate"
+version = "0.1.0"
+description = "Compile story continuity into shoot-day reset sheets"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+  { name = "KanadeK", email = "121669563+KanadeK@users.noreply.github.com" },
+]
+keywords = ["continuity", "film", "production", "offline", "cli"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: End Users/Desktop",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Multimedia :: Video",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/KanadeK/stateslate"
+Documentation = "https://github.com/KanadeK/stateslate#readme"
+Repository = "https://github.com/KanadeK/stateslate.git"
+Issues = "https://github.com/KanadeK/stateslate/issues"
+Changelog = "https://github.com/KanadeK/stateslate/blob/main/CHANGELOG.md"
+
+[project.scripts]
+stateslate = "stateslate.cli:main"
+
+[dependency-groups]
+dev = [
+  "build>=1.3,<2",
+  "mypy>=1.17,<2",
+  "pip-audit>=2.9,<3",
+  "pytest>=8.4,<9",
+  "pytest-cov>=6.2,<7",
+  "ruff>=0.12,<0.13",
+]
+
+[tool.uv]
+cache-dir = ".uv-cache"
+
+[tool.pytest.ini_options]
+addopts = ["--strict-config", "--strict-markers", "-p", "no:cacheprovider"]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["stateslate"]
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src", "tests", "scripts"]
