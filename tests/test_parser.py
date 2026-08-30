@@ -151,3 +151,30 @@ def test_load_project_reports_invalid_utf8_and_json(tmp_path: Path) -> None:
     json_path.write_text("{", encoding="utf-8")
     with pytest.raises(StateSlateError, match="INVALID_JSON"):
         load_project(json_path)
+
+
+def test_load_project_rejects_duplicate_json_keys(tmp_path: Path) -> None:
+    path = tmp_path / "duplicate-key.json"
+    path.write_text(
+        '{"schema_version":1,"schema_version":1,"title":"X","tracks":[],"scenes":[]}',
+        encoding="utf-8",
+    )
+
+    with pytest.raises(StateSlateError, match=r"DUPLICATE_KEY.*schema_version"):
+        load_project(path)
+
+
+def test_load_project_rejects_control_characters_in_strings(tmp_path: Path) -> None:
+    raw = valid_project()
+    raw["title"] = "Paper\nMoon"
+
+    with pytest.raises(StateSlateError, match=r"STRING.*control"):
+        load_project(write_project(tmp_path / "project.json", raw))
+
+
+def test_load_project_converts_oversized_integer_to_stable_error(tmp_path: Path) -> None:
+    path = tmp_path / "huge-integer.json"
+    path.write_text("1" * 5_000, encoding="utf-8")
+
+    with pytest.raises(StateSlateError, match="INVALID_JSON"):
+        load_project(path)

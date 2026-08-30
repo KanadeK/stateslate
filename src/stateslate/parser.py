@@ -74,6 +74,12 @@ def _string(value: object, *, path: str, maximum: int) -> str:
             f"{path} must be non-empty and have no edge whitespace",
             "Provide a concise value without leading or trailing spaces.",
         )
+    if any(ord(character) < 32 for character in value):
+        _fail(
+            "STRING",
+            f"{path} contains a control character",
+            "Remove tabs, line breaks, nulls, and other control characters.",
+        )
     if len(value) > maximum:
         _fail(
             "LIMIT",
@@ -243,6 +249,19 @@ def _reject_json_constant(value: str) -> NoReturn:
     )
 
 
+def _strict_json_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    result: dict[str, object] = {}
+    for key, value in pairs:
+        if key in result:
+            _fail(
+                "DUPLICATE_KEY",
+                f"JSON object contains duplicate key {key!r}",
+                "Keep one value for the key; duplicate JSON keys are ambiguous.",
+            )
+        result[key] = value
+    return result
+
+
 def load_project(path: Path) -> Project:
     """Load and strictly validate a StateSlate project from a UTF-8 JSON file."""
 
@@ -263,12 +282,22 @@ def load_project(path: Path) -> Project:
     except OSError as error:
         _fail("FILE_READ", f"cannot read {path}: {error}", "Check the path and permissions.")
     try:
-        decoded = json.loads(text, parse_constant=_reject_json_constant)
+        decoded = json.loads(
+            text,
+            parse_constant=_reject_json_constant,
+            object_pairs_hook=_strict_json_object,
+        )
     except json.JSONDecodeError as error:
         _fail(
             "INVALID_JSON",
             f"{path}:{error.lineno}:{error.colno}: {error.msg}",
             "Correct the JSON syntax and run validate again.",
+        )
+    except ValueError as error:
+        _fail(
+            "INVALID_JSON",
+            f"{path} contains a JSON value Python cannot represent safely: {error}",
+            "Replace the oversized numeric value with a bounded integer or string.",
         )
 
     raw = _object(

@@ -12,6 +12,7 @@ create the requested report directory.
 | `FILE_TOO_LARGE` | JSON exceeds 2 MiB | Split the production into smaller projects |
 | `INVALID_UTF8` | File is not UTF-8 | Re-save as UTF-8 JSON |
 | `INVALID_JSON` | Syntax error, NaN, or Infinity | Correct the reported location/value |
+| `DUPLICATE_KEY` | One JSON object repeats a key | Keep exactly one reviewed value |
 
 Validate after repair:
 

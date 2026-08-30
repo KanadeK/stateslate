@@ -21,7 +21,7 @@
 - [x] Task 7: Packaging and automation
   - Acceptance: wheel/sdist, isolated install, CI matrix, and release assets work.
   - Verify: `uv run --locked python scripts/check.py`.
-- [ ] Task 8: Independent five-axis review
+- [x] Task 8: Independent five-axis review
   - Acceptance: no unresolved correctness, simplicity, architecture, security, or
     performance blockers.
   - Verify: review record and regression tests for every discovered blocker.

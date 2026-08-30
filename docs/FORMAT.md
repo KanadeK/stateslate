@@ -1,7 +1,8 @@
 # StateSlate v0.1 input format
 
 StateSlate accepts one UTF-8 JSON object. Unknown keys are errors so a typo can
-never silently change the continuity plan.
+never silently change the continuity plan. Duplicate JSON keys and control
+characters in strings are rejected as ambiguous input.
 
 ## Project
 

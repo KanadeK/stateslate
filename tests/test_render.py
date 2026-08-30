@@ -10,7 +10,7 @@ from stateslate.parser import load_project
 from stateslate.render import render_artifacts
 
 
-def compilation(tmp_path: Path) -> Compilation:
+def compilation(tmp_path: Path, opened_state: str = "+opened") -> Compilation:
     raw = {
         "schema_version": 1,
         "title": "Paper <Moon>",
@@ -39,7 +39,7 @@ def compilation(tmp_path: Path) -> Compilation:
                     {
                         "track": "letter.seal",
                         "from": "sealed",
-                        "to": "+opened",
+                        "to": opened_state,
                         "note": "Open <on camera>",
                     }
                 ],
@@ -50,7 +50,7 @@ def compilation(tmp_path: Path) -> Compilation:
                 "story_order": 2,
                 "shoot": {"day": 1, "order": 1},
                 "tracks": ["jane.jacket", "letter.seal"],
-                "expects": {"letter.seal": "+opened"},
+                "expects": {"letter.seal": opened_state},
                 "transitions": [
                     {
                         "track": "jane.jacket",
@@ -142,3 +142,9 @@ def test_markdown_contains_shoot_order_resets_and_escapes_table_pipes(tmp_path: 
     assert "Reset `letter.seal`: `+opened` → `sealed`" in markdown
     assert "=Jane's \\| jacket" in markdown
     assert "FUTURE_REFERENCE" in markdown
+
+
+def test_markdown_uses_a_longer_code_fence_for_backticks_in_state(tmp_path: Path) -> None:
+    markdown = render_artifacts(compilation(tmp_path, opened_state="open`ed"))["reset-checklist.md"]
+
+    assert "``open`ed``" in markdown

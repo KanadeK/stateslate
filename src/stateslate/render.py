@@ -8,7 +8,6 @@ import csv
 import io
 import json
 from html import escape
-from typing import Any
 
 from stateslate import __version__
 from stateslate.compiler import Compilation, Reference, ShootAction, ShootScene
@@ -26,7 +25,7 @@ def _state_map(states: tuple[tuple[str, str], ...]) -> dict[str, str]:
     return dict(states)
 
 
-def _report_data(compilation: Compilation) -> dict[str, Any]:
+def _report_data(compilation: Compilation) -> dict[str, object]:
     project = compilation.timeline.project
     return {
         "schema_version": 1,
@@ -199,7 +198,17 @@ def _md(value: str) -> str:
 
 
 def _code(value: str) -> str:
-    return "`" + value.replace("`", "\\`") + "`"
+    longest_run = 0
+    current_run = 0
+    for character in value:
+        if character == "`":
+            current_run += 1
+            longest_run = max(longest_run, current_run)
+        else:
+            current_run = 0
+    fence = "`" * (longest_run + 1)
+    padding = " " if value.startswith("`") or value.endswith("`") else ""
+    return f"{fence}{padding}{value}{padding}{fence}"
 
 
 def _reference_text(reference: Reference) -> str:
