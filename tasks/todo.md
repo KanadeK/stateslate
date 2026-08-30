@@ -9,7 +9,7 @@
 - [x] Task 3: Shoot-order resets and risks
   - Acceptance: prepare/reset actions and reference availability are deterministic.
   - Verify: focused projection tests fail first, then pass.
-- [ ] Task 4: Five report formats
+- [x] Task 4: Five report formats
   - Acceptance: outputs agree, are deterministic, and escape untrusted text.
   - Verify: renderer unit tests and golden demo comparison.
 - [ ] Task 5: CLI and exit codes
