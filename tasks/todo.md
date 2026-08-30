@@ -18,7 +18,7 @@
 - [x] Task 6: Examples and documentation
   - Acceptance: clean and three blocking examples plus repair instructions exist.
   - Verify: every documented command is executed.
-- [ ] Task 7: Packaging and automation
+- [x] Task 7: Packaging and automation
   - Acceptance: wheel/sdist, isolated install, CI matrix, and release assets work.
   - Verify: `uv run --locked python scripts/check.py`.
 - [ ] Task 8: Independent five-axis review

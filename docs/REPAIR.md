@@ -88,3 +88,6 @@ uv run --no-sync python scripts/check.py
   checkout bytes and `.gitattributes`; retain the byte comparison.
 - If dependency download hits a network permission error, rerun the unchanged
   command in an execution context permitted to access PyPI.
+- If one host separates filesystem and network permissions, export and audit the
+  locked requirements in the network-capable context, then run
+  `scripts/check.py --skip-audit` locally. CI must still run the default command.
