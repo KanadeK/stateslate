@@ -48,5 +48,5 @@ Risks:
 - **MEDIUM LONG_REFERENCE_GAP** — `mara.coat` references S30 across 5 shoot day(s).
 - **MEDIUM LONG_REFERENCE_GAP** — `cafe.glass` references S30 across 5 shoot day(s).
 
-> StateSlate compiles declared states. Confirm every setup against the approved 
+> StateSlate compiles declared states. Confirm every setup against the approved
 > continuity notes and on-set reference material.

@@ -81,6 +81,7 @@ def test_render_artifacts_returns_the_complete_deterministic_set(tmp_path: Path)
         "timeline.svg",
     }
     assert all(text.endswith("\n") for text in first.values())
+    assert all(line == line.rstrip() for text in first.values() for line in text.splitlines())
 
 
 def test_json_report_preserves_values_and_one_compiled_truth(tmp_path: Path) -> None:

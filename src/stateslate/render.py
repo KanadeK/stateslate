@@ -267,7 +267,7 @@ def _render_markdown(compilation: Compilation) -> str:
         lines.append("")
     lines.extend(
         [
-            "> StateSlate compiles declared states. Confirm every setup against the approved ",
+            "> StateSlate compiles declared states. Confirm every setup against the approved",
             "> continuity notes and on-set reference material.",
         ]
     )
