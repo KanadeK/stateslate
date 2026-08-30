@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "title": "Unknown track",
+  "tracks": [
+    {"id": "coat", "label": "Coat", "category": "wardrobe", "initial": "clean"}
+  ],
+  "scenes": [
+    {
+      "id": "S01",
+      "title": "Arrival",
+      "story_order": 1,
+      "shoot": {"day": 1, "order": 1},
+      "tracks": ["ghost.hat"],
+      "transitions": []
+    }
+  ]
+}

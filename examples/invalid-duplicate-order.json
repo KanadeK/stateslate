@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "title": "Duplicate story order",
+  "tracks": [
+    {"id": "coat", "label": "Coat", "category": "wardrobe", "initial": "clean"}
+  ],
+  "scenes": [
+    {
+      "id": "S01",
+      "title": "First",
+      "story_order": 1,
+      "shoot": {"day": 1, "order": 1},
+      "tracks": ["coat"],
+      "transitions": []
+    },
+    {
+      "id": "S02",
+      "title": "Second",
+      "story_order": 1,
+      "shoot": {"day": 1, "order": 2},
+      "tracks": ["coat"],
+      "transitions": []
+    }
+  ]
+}

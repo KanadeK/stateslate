@@ -1,0 +1,343 @@
+{
+  "generator": {
+    "name": "stateslate",
+    "version": "0.1.0"
+  },
+  "project": {
+    "title": "Moonlit Letter"
+  },
+  "risks": [
+    {
+      "code": "FUTURE_REFERENCE",
+      "day_gap": 3,
+      "scene": "S20",
+      "severity": "high",
+      "source_scene": "S10",
+      "track": "mara.coat"
+    },
+    {
+      "code": "FUTURE_REFERENCE",
+      "day_gap": 3,
+      "scene": "S20",
+      "severity": "high",
+      "source_scene": "S10",
+      "track": "letter.seal"
+    },
+    {
+      "code": "LONG_REFERENCE_GAP",
+      "day_gap": 5,
+      "scene": "S40",
+      "severity": "medium",
+      "source_scene": "S30",
+      "track": "mara.coat"
+    },
+    {
+      "code": "LONG_REFERENCE_GAP",
+      "day_gap": 5,
+      "scene": "S40",
+      "severity": "medium",
+      "source_scene": "S30",
+      "track": "cafe.glass"
+    }
+  ],
+  "schema_version": 1,
+  "shoot_scenes": [
+    {
+      "actions": [
+        {
+          "from": null,
+          "kind": "prepare",
+          "source_scene": null,
+          "to": "clean_buttoned",
+          "track": "mara.coat"
+        },
+        {
+          "from": null,
+          "kind": "prepare",
+          "source_scene": null,
+          "to": "opened",
+          "track": "letter.seal"
+        }
+      ],
+      "exit_states": {
+        "letter.seal": "opened",
+        "mara.coat": "rain_soaked_open"
+      },
+      "id": "S20",
+      "references": [
+        {
+          "day_gap": 3,
+          "source_scene": "S10",
+          "status": "future",
+          "track": "mara.coat"
+        },
+        {
+          "day_gap": 3,
+          "source_scene": "S10",
+          "status": "future",
+          "track": "letter.seal"
+        }
+      ],
+      "setup_states": {
+        "letter.seal": "opened",
+        "mara.coat": "clean_buttoned"
+      },
+      "shoot": {
+        "day": 1,
+        "order": 1
+      },
+      "story_order": 20,
+      "title": "Rain in the alley"
+    },
+    {
+      "actions": [
+        {
+          "from": null,
+          "kind": "prepare",
+          "source_scene": null,
+          "to": "full",
+          "track": "cafe.glass"
+        }
+      ],
+      "exit_states": {
+        "cafe.glass": "half",
+        "mara.coat": "rain_soaked_open"
+      },
+      "id": "S30",
+      "references": [
+        {
+          "day_gap": 0,
+          "source_scene": "S20",
+          "status": "available",
+          "track": "mara.coat"
+        },
+        {
+          "day_gap": null,
+          "source_scene": null,
+          "status": "initial",
+          "track": "cafe.glass"
+        }
+      ],
+      "setup_states": {
+        "cafe.glass": "full",
+        "mara.coat": "rain_soaked_open"
+      },
+      "shoot": {
+        "day": 1,
+        "order": 2
+      },
+      "story_order": 30,
+      "title": "The diner confession"
+    },
+    {
+      "actions": [
+        {
+          "from": "rain_soaked_open",
+          "kind": "reset",
+          "source_scene": "S30",
+          "to": "clean_buttoned",
+          "track": "mara.coat"
+        },
+        {
+          "from": "opened",
+          "kind": "reset",
+          "source_scene": "S20",
+          "to": "sealed",
+          "track": "letter.seal"
+        }
+      ],
+      "exit_states": {
+        "letter.seal": "opened",
+        "mara.coat": "clean_buttoned"
+      },
+      "id": "S10",
+      "references": [
+        {
+          "day_gap": null,
+          "source_scene": null,
+          "status": "initial",
+          "track": "mara.coat"
+        },
+        {
+          "day_gap": null,
+          "source_scene": null,
+          "status": "initial",
+          "track": "letter.seal"
+        }
+      ],
+      "setup_states": {
+        "letter.seal": "sealed",
+        "mara.coat": "clean_buttoned"
+      },
+      "shoot": {
+        "day": 4,
+        "order": 1
+      },
+      "story_order": 10,
+      "title": "The letter arrives"
+    },
+    {
+      "actions": [
+        {
+          "from": "clean_buttoned",
+          "kind": "reset",
+          "source_scene": "S10",
+          "to": "rain_soaked_open",
+          "track": "mara.coat"
+        }
+      ],
+      "exit_states": {
+        "cafe.glass": "half",
+        "mara.coat": "rain_soaked_open"
+      },
+      "id": "S40",
+      "references": [
+        {
+          "day_gap": 5,
+          "source_scene": "S30",
+          "status": "available",
+          "track": "mara.coat"
+        },
+        {
+          "day_gap": 5,
+          "source_scene": "S30",
+          "status": "available",
+          "track": "cafe.glass"
+        }
+      ],
+      "setup_states": {
+        "cafe.glass": "half",
+        "mara.coat": "rain_soaked_open"
+      },
+      "shoot": {
+        "day": 6,
+        "order": 1
+      },
+      "story_order": 40,
+      "title": "Morning pickup"
+    }
+  ],
+  "story_scenes": [
+    {
+      "entry_states": {
+        "letter.seal": "sealed",
+        "mara.coat": "clean_buttoned"
+      },
+      "exit_states": {
+        "letter.seal": "opened",
+        "mara.coat": "clean_buttoned"
+      },
+      "id": "S10",
+      "shoot": {
+        "day": 4,
+        "order": 1
+      },
+      "story_order": 10,
+      "title": "The letter arrives",
+      "transitions": [
+        {
+          "from": "sealed",
+          "note": "Mara breaks the seal on camera",
+          "to": "opened",
+          "track": "letter.seal"
+        }
+      ]
+    },
+    {
+      "entry_states": {
+        "letter.seal": "opened",
+        "mara.coat": "clean_buttoned"
+      },
+      "exit_states": {
+        "letter.seal": "opened",
+        "mara.coat": "rain_soaked_open"
+      },
+      "id": "S20",
+      "shoot": {
+        "day": 1,
+        "order": 1
+      },
+      "story_order": 20,
+      "title": "Rain in the alley",
+      "transitions": [
+        {
+          "from": "clean_buttoned",
+          "note": "Coat becomes wet during the scene",
+          "to": "rain_soaked_open",
+          "track": "mara.coat"
+        }
+      ]
+    },
+    {
+      "entry_states": {
+        "cafe.glass": "full",
+        "mara.coat": "rain_soaked_open"
+      },
+      "exit_states": {
+        "cafe.glass": "half",
+        "mara.coat": "rain_soaked_open"
+      },
+      "id": "S30",
+      "shoot": {
+        "day": 1,
+        "order": 2
+      },
+      "story_order": 30,
+      "title": "The diner confession",
+      "transitions": [
+        {
+          "from": "full",
+          "note": "Mara drinks during the confession",
+          "to": "half",
+          "track": "cafe.glass"
+        }
+      ]
+    },
+    {
+      "entry_states": {
+        "cafe.glass": "half",
+        "mara.coat": "rain_soaked_open"
+      },
+      "exit_states": {
+        "cafe.glass": "half",
+        "mara.coat": "rain_soaked_open"
+      },
+      "id": "S40",
+      "shoot": {
+        "day": 6,
+        "order": 1
+      },
+      "story_order": 40,
+      "title": "Morning pickup",
+      "transitions": []
+    }
+  ],
+  "summary": {
+    "high_risk_count": 2,
+    "medium_risk_count": 2,
+    "prepare_count": 3,
+    "reset_count": 3,
+    "scene_count": 4,
+    "track_count": 3
+  },
+  "tracks": [
+    {
+      "category": "wardrobe",
+      "id": "mara.coat",
+      "initial": "clean_buttoned",
+      "label": "Mara's blue coat"
+    },
+    {
+      "category": "props",
+      "id": "letter.seal",
+      "initial": "sealed",
+      "label": "Red letter seal"
+    },
+    {
+      "category": "props",
+      "id": "cafe.glass",
+      "initial": "full",
+      "label": "Cafe water glass"
+    }
+  ]
+}

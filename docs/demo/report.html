@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moonlit Letter · StateSlate continuity report</title>
+<style>
+:root{--ink:#17213b;--muted:#667085;--paper:#f4f1ea;--card:#fff;--violet:#635bff;--red:#d1495b;--amber:#b26a00}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,sans-serif}
+main{max-width:1180px;margin:auto;padding:48px 24px 72px}h1{font-size:clamp(2.2rem,7vw,5rem);line-height:.95;margin:.25em 0}
+.eyebrow{font-weight:800;letter-spacing:.16em;color:var(--violet)}.lede{max-width:760px;color:var(--muted);font-size:1.15rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin:32px 0}
+.stat,.panel,.scene-card{background:var(--card);border:1px solid #d8d3c7;border-radius:18px;box-shadow:0 8px 30px #17213b0d}
+.stat{padding:18px}.stat strong{display:block;font-size:2rem}.stat span,small{color:var(--muted)}
+.panel{padding:22px;margin:22px 0;overflow:hidden}.panel svg{width:100%;height:auto;display:block}
+.scene-card{margin:18px 0;overflow:hidden}.scene-card header{padding:20px 22px;border-bottom:1px solid #ece8df}
+.scene-card header span{font-weight:800;color:var(--violet)}.scene-card h3{margin:.2rem 0;font-size:1.35rem}
+.actions{margin:18px 40px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse}
+th,td{padding:12px 14px;text-align:left;border-top:1px solid #ece8df;vertical-align:top}th{font-size:.8rem;letter-spacing:.08em;color:var(--muted)}
+code{background:#f1efff;border-radius:5px;padding:.12em .35em}.pill{display:inline-block;border-radius:99px;padding:.2em .7em;font-weight:800;color:#fff}
+.pill.high{background:var(--red)}.pill.medium{background:var(--amber)}.caveat{border-left:5px solid var(--violet);padding:12px 18px;background:#eeebff}
+@media print{body{background:#fff}main{padding:0}.stat,.panel,.scene-card{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body><main>
+<p class="eyebrow">STATESLATE · OFFLINE CONTINUITY COMPILER</p>
+<h1>Moonlit Letter</h1>
+<p class="lede">Story-state authority projected into shoot-order preparations, resets, and reference risks. Generated deterministically from the reviewed project file.</p>
+<section class="stats" aria-label="Compilation summary">
+<div class="stat"><strong>4</strong><span>scenes</span></div>
+<div class="stat"><strong>3</strong><span>tracks</span></div>
+<div class="stat"><strong>3</strong><span>preparations</span></div>
+<div class="stat"><strong>3</strong><span>resets</span></div>
+<div class="stat"><strong>2</strong><span>high risks</span></div>
+<div class="stat"><strong>2</strong><span>medium risks</span></div>
+</section>
+<section class="panel" aria-labelledby="timeline-heading"><h2 id="timeline-heading">Two orders, one state authority</h2><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 1120 550" width="1120" height="550">
+<title>StateSlate continuity timeline for Moonlit Letter</title>
+<desc>Story order appears on the left and scheduled shoot order on the right.</desc>
+<style>
+.title{font:700 28px system-ui,sans-serif;fill:#17213b}
+.heading{font:700 15px system-ui,sans-serif;letter-spacing:.12em;fill:#59637d}
+.meta{font:600 13px system-ui,sans-serif;fill:#59637d}
+.scene{font:700 17px system-ui,sans-serif;fill:#17213b}
+</style>
+<rect width="1120" height="550" fill="#f4f1ea"/>
+<text x="40" y="48" class="title">Moonlit Letter</text>
+<text x="40" y="84" class="heading">STORY ORDER · STATE AUTHORITY</text>
+<text x="580" y="84" class="heading">SHOOT ORDER · RESET PLAN</text>
+<rect x="40" y="105" width="500" height="78" rx="14" fill="#ffffff" stroke="#635bff" stroke-width="2"/>
+<text x="60" y="133" class="meta">Story 10</text>
+<text x="60" y="161" class="scene">S10 · The letter arrives</text>
+<rect x="40" y="205" width="500" height="78" rx="14" fill="#ffffff" stroke="#635bff" stroke-width="2"/>
+<text x="60" y="233" class="meta">Story 20</text>
+<text x="60" y="261" class="scene">S20 · Rain in the alley</text>
+<rect x="40" y="305" width="500" height="78" rx="14" fill="#ffffff" stroke="#635bff" stroke-width="2"/>
+<text x="60" y="333" class="meta">Story 30</text>
+<text x="60" y="361" class="scene">S30 · The diner confession</text>
+<rect x="40" y="405" width="500" height="78" rx="14" fill="#ffffff" stroke="#635bff" stroke-width="2"/>
+<text x="60" y="433" class="meta">Story 40</text>
+<text x="60" y="461" class="scene">S40 · Morning pickup</text>
+<rect x="580" y="105" width="500" height="78" rx="14" fill="#ffffff" stroke="#d1495b" stroke-width="2"/>
+<text x="600" y="133" class="meta">Day 1 · order 1</text>
+<text x="600" y="161" class="scene">S20 · Rain in the alley</text>
+<rect x="580" y="205" width="500" height="78" rx="14" fill="#ffffff" stroke="#1d8a72" stroke-width="2"/>
+<text x="600" y="233" class="meta">Day 1 · order 2</text>
+<text x="600" y="261" class="scene">S30 · The diner confession</text>
+<rect x="580" y="305" width="500" height="78" rx="14" fill="#ffffff" stroke="#1d8a72" stroke-width="2"/>
+<text x="600" y="333" class="meta">Day 4 · order 1</text>
+<text x="600" y="361" class="scene">S10 · The letter arrives</text>
+<rect x="580" y="405" width="500" height="78" rx="14" fill="#ffffff" stroke="#d1495b" stroke-width="2"/>
+<text x="600" y="433" class="meta">Day 6 · order 1</text>
+<text x="600" y="461" class="scene">S40 · Morning pickup</text>
+</svg></section>
+<section class="panel"><h2>Reference risks</h2><div class="table-wrap"><table><thead><tr><th>Severity</th><th>Code</th><th>Scene</th><th>Track</th><th>Source</th><th>Days</th></tr></thead><tbody><tr><td><span class="pill high">high</span></td><td>FUTURE_REFERENCE</td><td>S20</td><td>mara.coat</td><td>S10</td><td>3</td></tr><tr><td><span class="pill high">high</span></td><td>FUTURE_REFERENCE</td><td>S20</td><td>letter.seal</td><td>S10</td><td>3</td></tr><tr><td><span class="pill medium">medium</span></td><td>LONG_REFERENCE_GAP</td><td>S40</td><td>mara.coat</td><td>S30</td><td>5</td></tr><tr><td><span class="pill medium">medium</span></td><td>LONG_REFERENCE_GAP</td><td>S40</td><td>cafe.glass</td><td>S30</td><td>5</td></tr></tbody></table></div></section>
+<h2>Shoot-day reset plan</h2>
+<section class="scene-card"><header><span>Day 1 / 1</span><h3>S20 · Rain in the alley</h3><small>Story position 20</small></header><ul class="actions"><li><strong>Prepare</strong> <code>mara.coat</code>: unprepared → clean_buttoned</li><li><strong>Prepare</strong> <code>letter.seal</code>: unprepared → opened</li></ul><div class="table-wrap"><table><thead><tr><th>Track</th><th>Label</th><th>Setup</th><th>Exit</th><th>Reference</th></tr></thead><tbody><tr><td><code>mara.coat</code></td><td>Mara&#x27;s blue coat</td><td>clean_buttoned</td><td>rain_soaked_open</td><td>future: S10 (3 day gap)</td></tr><tr><td><code>letter.seal</code></td><td>Red letter seal</td><td>opened</td><td>opened</td><td>future: S10 (3 day gap)</td></tr></tbody></table></div></section><section class="scene-card"><header><span>Day 1 / 2</span><h3>S30 · The diner confession</h3><small>Story position 30</small></header><ul class="actions"><li><strong>Prepare</strong> <code>cafe.glass</code>: unprepared → full</li></ul><div class="table-wrap"><table><thead><tr><th>Track</th><th>Label</th><th>Setup</th><th>Exit</th><th>Reference</th></tr></thead><tbody><tr><td><code>mara.coat</code></td><td>Mara&#x27;s blue coat</td><td>rain_soaked_open</td><td>rain_soaked_open</td><td>available: S20 (0 day gap)</td></tr><tr><td><code>cafe.glass</code></td><td>Cafe water glass</td><td>full</td><td>half</td><td>initial state</td></tr></tbody></table></div></section><section class="scene-card"><header><span>Day 4 / 1</span><h3>S10 · The letter arrives</h3><small>Story position 10</small></header><ul class="actions"><li><strong>Reset</strong> <code>mara.coat</code>: rain_soaked_open → clean_buttoned</li><li><strong>Reset</strong> <code>letter.seal</code>: opened → sealed</li></ul><div class="table-wrap"><table><thead><tr><th>Track</th><th>Label</th><th>Setup</th><th>Exit</th><th>Reference</th></tr></thead><tbody><tr><td><code>mara.coat</code></td><td>Mara&#x27;s blue coat</td><td>clean_buttoned</td><td>clean_buttoned</td><td>initial state</td></tr><tr><td><code>letter.seal</code></td><td>Red letter seal</td><td>sealed</td><td>opened</td><td>initial state</td></tr></tbody></table></div></section><section class="scene-card"><header><span>Day 6 / 1</span><h3>S40 · Morning pickup</h3><small>Story position 40</small></header><ul class="actions"><li><strong>Reset</strong> <code>mara.coat</code>: clean_buttoned → rain_soaked_open</li></ul><div class="table-wrap"><table><thead><tr><th>Track</th><th>Label</th><th>Setup</th><th>Exit</th><th>Reference</th></tr></thead><tbody><tr><td><code>mara.coat</code></td><td>Mara&#x27;s blue coat</td><td>rain_soaked_open</td><td>rain_soaked_open</td><td>available: S30 (5 day gap)</td></tr><tr><td><code>cafe.glass</code></td><td>Cafe water glass</td><td>half</td><td>half</td><td>available: S30 (5 day gap)</td></tr></tbody></table></div></section>
+<p class="caveat"><strong>Boundary:</strong> StateSlate compiles declared states. Confirm every setup against approved notes and on-set reference material; this report does not prove visual or physical continuity.</p>
+</main></body></html>

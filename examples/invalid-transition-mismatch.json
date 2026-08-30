@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "title": "Contradictory transition",
+  "tracks": [
+    {"id": "coat", "label": "Coat", "category": "wardrobe", "initial": "clean"}
+  ],
+  "scenes": [
+    {
+      "id": "S01",
+      "title": "Rain",
+      "story_order": 1,
+      "shoot": {"day": 1, "order": 1},
+      "tracks": ["coat"],
+      "transitions": [
+        {"track": "coat", "from": "already_wet", "to": "soaked"}
+      ]
+    }
+  ]
+}

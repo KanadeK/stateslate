@@ -1,0 +1,9 @@
+shoot_day,shoot_order,scene_id,scene_title,story_order,track_id,track_label,category,setup_state,exit_state,action_kind,from_state,reference_status,reference_scene,day_gap,risk_codes
+1,1,S20,Rain in the alley,20,mara.coat,Mara's blue coat,wardrobe,clean_buttoned,rain_soaked_open,prepare,,future,S10,3,FUTURE_REFERENCE
+1,1,S20,Rain in the alley,20,letter.seal,Red letter seal,props,opened,opened,prepare,,future,S10,3,FUTURE_REFERENCE
+1,2,S30,The diner confession,30,mara.coat,Mara's blue coat,wardrobe,rain_soaked_open,rain_soaked_open,confirm,rain_soaked_open,available,S20,0,
+1,2,S30,The diner confession,30,cafe.glass,Cafe water glass,props,full,half,prepare,,initial,,,
+4,1,S10,The letter arrives,10,mara.coat,Mara's blue coat,wardrobe,clean_buttoned,clean_buttoned,reset,rain_soaked_open,initial,,,
+4,1,S10,The letter arrives,10,letter.seal,Red letter seal,props,sealed,opened,reset,opened,initial,,,
+6,1,S40,Morning pickup,40,mara.coat,Mara's blue coat,wardrobe,rain_soaked_open,rain_soaked_open,reset,clean_buttoned,available,S30,5,LONG_REFERENCE_GAP
+6,1,S40,Morning pickup,40,cafe.glass,Cafe water glass,props,half,half,confirm,half,available,S30,5,LONG_REFERENCE_GAP
