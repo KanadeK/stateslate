@@ -6,7 +6,7 @@
 - [x] Task 2: Story-order state propagation
   - Acceptance: entry/exit states are exact; contradictory `from`/`expects` fail.
   - Verify: focused compiler tests fail first, then pass.
-- [ ] Task 3: Shoot-order resets and risks
+- [x] Task 3: Shoot-order resets and risks
   - Acceptance: prepare/reset actions and reference availability are deterministic.
   - Verify: focused projection tests fail first, then pass.
 - [ ] Task 4: Five report formats
