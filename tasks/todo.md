@@ -15,7 +15,7 @@
 - [x] Task 5: CLI and exit codes
   - Acceptance: validate/compile/demo/version work; failure leaves no output.
   - Verify: subprocess integration tests.
-- [ ] Task 6: Examples and documentation
+- [x] Task 6: Examples and documentation
   - Acceptance: clean and three blocking examples plus repair instructions exist.
   - Verify: every documented command is executed.
 - [ ] Task 7: Packaging and automation
