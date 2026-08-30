@@ -3,7 +3,7 @@
 - [x] Task 1: Strict JSON contract
   - Acceptance: valid project parses; unknown keys, duplicates, and bounds fail.
   - Verify: focused parser tests fail first, then pass.
-- [ ] Task 2: Story-order state propagation
+- [x] Task 2: Story-order state propagation
   - Acceptance: entry/exit states are exact; contradictory `from`/`expects` fail.
   - Verify: focused compiler tests fail first, then pass.
 - [ ] Task 3: Shoot-order resets and risks
