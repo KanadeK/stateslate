@@ -12,7 +12,7 @@
 - [x] Task 4: Five report formats
   - Acceptance: outputs agree, are deterministic, and escape untrusted text.
   - Verify: renderer unit tests and golden demo comparison.
-- [ ] Task 5: CLI and exit codes
+- [x] Task 5: CLI and exit codes
   - Acceptance: validate/compile/demo/version work; failure leaves no output.
   - Verify: subprocess integration tests.
 - [ ] Task 6: Examples and documentation
