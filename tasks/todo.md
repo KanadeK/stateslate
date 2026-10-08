@@ -25,7 +25,8 @@
   - Acceptance: no unresolved correctness, simplicity, architecture, security, or
     performance blockers.
   - Verify: review record and regression tests for every discovered blocker.
-- [ ] Task 9: Public release closure
+- [x] Task 9: Public release closure
   - Acceptance: public repo, green CI, annotated tag, Release assets/checksums,
     fresh public install, contributor audit, and verified Gmail notice.
   - Verify: public API/CLI checks and sent-message retrieval.
+  - Evidence: [verified v0.1.0 release](../docs/RELEASE_EVIDENCE.md).
