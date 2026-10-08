@@ -2,7 +2,7 @@
 
 All notable changes to StateSlate are documented here.
 
-## [0.1.0] - 2026-08-30
+## [0.1.0] - 2026-10-07
 
 ### Added
 
@@ -15,3 +15,8 @@ All notable changes to StateSlate are documented here.
 - Transactional, no-overwrite CLI with `validate`, `compile`, and `demo`.
 - Clean and blocking examples, cross-platform CI, release packaging, and one
   complete contributor acceptance gate.
+
+### Security
+
+- Refreshed the development-toolchain lock to urllib3 2.8.0 after the release
+  audit identified three advisories in 2.7.0. Runtime dependencies remain empty.
